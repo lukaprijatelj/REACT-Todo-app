@@ -19,12 +19,12 @@ class EntryView extends React.Component<IEntryProps, IEntryState>
 	constructor(props: IEntryProps)
 	{
 		super(props);
-		this.state = 
+		this.state =
 		{
 			hover: false
 		};
 	}
-    
+
 	componentDidMount()
 	{
 
@@ -46,19 +46,19 @@ class EntryView extends React.Component<IEntryProps, IEntryState>
 
 		let style = {
 			cursor: "pointer",
-			padding: "10px 30px", 
-			margin: "10px", 
-			borderRadius: "5px", 
-			listStyleType: "none", 
-			borderColor: borderColor, 
-			borderWidth: "1px", 
+			padding: "10px 30px",
+			margin: "10px",
+			borderRadius: "5px",
+			listStyleType: "none",
+			borderColor: borderColor,
+			borderWidth: "1px",
 			borderStyle: "solid",
 			fontWeight: 100
 		};
 
 		return (
-			<li key={this.props.index} style={style} onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}>{this.props.entry}</li>
-		);	
+			<div key={this.props.index} style={style} onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}>{this.props.entry}</div>
+		);
 	}
 }
 
@@ -66,16 +66,16 @@ class EntryView extends React.Component<IEntryProps, IEntryState>
 
 interface IAppState
 {
-	
+
 }
 class App extends React.Component<{}, IAppState>
 {
 	constructor(props: Object)
 	{
 		super(props);
-		this.state = {};		
+		this.state = {};
 	}
-    
+
 	componentDidMount()
 	{
 		// subscribe to database when data is updated
@@ -86,11 +86,11 @@ class App extends React.Component<{}, IAppState>
 		});
 
 		// action creator
-		let tasksLoadedAction = (data: any) => ({ 
+		let tasksLoadedAction = (data: any) => ({
 			type: "tasksLoaded",
 			payload: {
 				tasks: data.todoList
-			}		
+			}
 		});
 
 		fetch("/api")
@@ -105,16 +105,19 @@ class App extends React.Component<{}, IAppState>
 	render() 
 	{
 		let listItems = store.getState() ? store.getState().map((entry: string, index: number) =>
-			<EntryView entry={entry} index={index} />			
+			<EntryView entry={entry} index={index} />
 		) : (null);
 
-	  	return (
+		return (
 			<div className="App" style={{ backgroundColor: "#44014C", minHeight: "200px" }}>
 				<header className="App-header">
-					<ul>{listItems}</ul>
+					<div>
+						<h1>Todo list:</h1>
+						{listItems}
+					</div>
 				</header>
 			</div>
-	  	);
+		);
 	}
 }
 

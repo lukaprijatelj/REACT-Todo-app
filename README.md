@@ -1,15 +1,15 @@
 # REACT-Todo-app
 
-// followed from: https://www.freecodecamp.org/news/how-to-create-a-react-app-with-a-node-backend-the-complete-guide/
+// start APP 
+1. Open root folder and run 'npm start' which will start node server.
+2. Open client folder and run 'npm start' which will compile react and open url.
+
+
 
 // install node
 
 // install typescript
 npm install --save typescript @types/node @types/react @types/react-dom @types/jest
-
-// start APP 
-1. Open root folder and run 'npm start' which will start node server.
-2. Open client folder and run 'npm start' which will compile react and open url.
 
 // install redux
 npm install --save redux react-redux
@@ -27,3 +27,7 @@ const newObj = { ... oldObj, prop1: "test" };
 const newObj = { ... oldObj, prop2: { ... oldObj.prop3 } };   // when you need deep cloning
 
 // immer library is better than immutable (for immutability libraries)
+
+// added proxy property to package.json in order for api calls to work
+
+![alt tag](https://raw.githubusercontent.com/lukaprijatelj/REACT-Todo-app/master/Screenshot.jpg)

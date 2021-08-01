@@ -8,10 +8,11 @@ const app = express();
 
 app.get("/api", (req, res) => 
 {
-	let todoList = [ "bake cake", "loundry", "wash dishes", "clean house", "go to fitness" ];
+	let todoList = ["bake cake", "loundry", "wash dishes", "clean house", "go to fitness"];
 	res.json({ todoList: todoList });
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, () =>
+{
 	console.log(`Server listening on ${PORT}`);
 });
