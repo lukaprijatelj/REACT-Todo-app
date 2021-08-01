@@ -16,3 +16,18 @@
 .App-link {
 	color: #61dafb;
 }
+
+input
+{
+    /** Needed because padding changes width uncontrollably if this is missing */
+    box-sizing: border-box;
+    display: block;
+    outline: none;
+    text-align: left;
+    background-color: transparent;
+    color: white;
+    font-size: calc(10px + 2vmin);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+}

@@ -1,74 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
 
 import React from "react";
 import store from './store';
-
-
-interface IEntryState
-{
-	hover: boolean;
-}
-interface IEntryProps
-{
-	entry: string;
-	index: number;
-}
-class EntryView extends React.Component<IEntryProps, IEntryState>
-{
-	constructor(props: IEntryProps)
-	{
-		super(props);
-		this.state =
-		{
-			hover: false
-		};
-	}
-
-	componentDidMount()
-	{
-
-	}
-
-	toggleHover = () => 
-	{
-		this.setState({ hover: !this.state.hover });
-	}
-
-	render() 
-	{
-		let borderColor = 'white'
-
-		if (this.state.hover == true) 
-		{
-			borderColor = '#61DAFB';
-		}
-
-		let style = {
-			cursor: "pointer",
-			padding: "10px 30px",
-			margin: "10px",
-			borderRadius: "5px",
-			listStyleType: "none",
-			borderColor: borderColor,
-			borderWidth: "1px",
-			borderStyle: "solid",
-			fontWeight: 100
-		};
-
-		return (
-			<div key={this.props.index} style={style} onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}>{this.props.entry}</div>
-		);
-	}
-}
-
-
+import { IEntryState, IEntryProps, EntryView } from "./Components/EntryView";
+import { IAddEntryState, IAddEntryProps, AddEntry } from "./Components/AddEntry";
 
 interface IAppState
 {
 
 }
-class App extends React.Component<{}, IAppState>
+class App extends React.Component<Object, IAppState>
 {
 	constructor(props: Object)
 	{
@@ -76,7 +17,7 @@ class App extends React.Component<{}, IAppState>
 		this.state = {};
 	}
 
-	componentDidMount()
+	public componentDidMount()
 	{
 		// subscribe to database when data is updated
 		const unsubscribe = store.subscribe(() => 
@@ -102,7 +43,7 @@ class App extends React.Component<{}, IAppState>
 			});
 	}
 
-	render() 
+	public render() 
 	{
 		let listItems = store.getState() ? store.getState().map((entry: string, index: number) =>
 			<EntryView entry={entry} index={index} />
@@ -114,6 +55,7 @@ class App extends React.Component<{}, IAppState>
 					<div>
 						<h1>Todo list:</h1>
 						{listItems}
+						<AddEntry />
 					</div>
 				</header>
 			</div>
