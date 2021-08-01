@@ -18,8 +18,14 @@
   },
   "homepage": "https://github.com/lukaprijatelj/REACT-Todo-app#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "@types/react": "^17.0.15",
+    "@types/react-dom": "^17.0.9",
+    "@types/react-redux": "^7.1.18",
+    "express": "^4.17.1",
+    "tslib": "^2.3.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "typescript": "^4.3.5"
+  },
   "keywords": []
 }
