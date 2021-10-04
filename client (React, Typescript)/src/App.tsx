@@ -1,4 +1,4 @@
-import './App.css';
+import './Styles/App.css';
 
 import React from "react";
 import { IEntryState, IEntryProps, EntryView } from "./Components/EntryView";
