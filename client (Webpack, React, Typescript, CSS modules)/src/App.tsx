@@ -30,7 +30,7 @@ class App extends React.Component<Object, IAppState>
 	{
 		let listItems = this.state.todoList ? this.state.todoList.map((entry, index) =>
 			<EntryView entry={entry} index={index} />
-		) : (null);
+		) : (null); 
 
 		return (
 			<div className="App" style={{ backgroundColor: "#44014C", minHeight: "200px" }}>
