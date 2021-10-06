@@ -1,0 +1,17 @@
+.entry-view
+{
+	cursor: pointer;
+	padding: 10px 30px;
+	margin: 10px;
+	border-radius: 5px;
+	list-style-type: none;
+	border-color: white;
+	border-width: 1px;
+	border-style: solid;
+	font-weight: 100;
+}
+
+.entry-view:hover
+{
+	border-color: #61DAFB;
+}

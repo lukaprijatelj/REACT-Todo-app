@@ -39,7 +39,8 @@ export class EntryView extends React.Component<IEntryProps, IEntryState>
 			borderColor = '#61DAFB';
 		}
 
-		let style = {
+		let style = 
+		{
 			cursor: "pointer",
 			padding: "10px 30px",
 			margin: "10px",
