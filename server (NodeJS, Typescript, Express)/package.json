@@ -16,6 +16,10 @@
 	},
 	"homepage": "https://github.com/lukaprijatelj/REACT-Todo-app#readme",
 	"dependencies": {
+		"express": "^4.17.1",
+		"tslib": "^2.3.0"
+	},
+	"devDependencies": {
 		"@types/express": "^4.17.13",
 		"@types/node": "^16.10.3",
 		"express": "^4.17.1",
